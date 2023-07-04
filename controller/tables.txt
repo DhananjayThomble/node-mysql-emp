@@ -1,0 +1,20 @@
+// company table
+
+CREATE TABLE tblCompany (
+    companyId INT NOT NULL AUTO_INCREMENT,
+    companyName VARCHAR(255) NOT NULL,
+    PRIMARY KEY (companyId)
+);
+
+// user table
+
+CREATE TABLE tblUser(
+    userId INT NOT NULL AUTO_INCREMENT,
+    userName VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    mobile VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    companyId INT NOT NULL,
+    PRIMARY KEY (userId),
+    FOREIGN KEY (companyId) REFERENCES tblCompany(companyId)
+);
